@@ -1,2 +1,2 @@
 # TicTacToeTow
-The repo for the game TicTacToeTow
+www.van-meggelen.nl/TTTT
