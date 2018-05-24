@@ -1,0 +1,265 @@
+html {
+	/* darkgrey */
+	background-color: #363636;
+}
+
+@font-face {
+	font-family: "Maximilien-regular";
+	src: url(maximilien_regular.ttf) format("truetype");
+}
+
+body {
+	/* no 8px shit */
+	margin: 0;
+	padding: 0;
+	/* smooth animations */
+	transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	overflow: hidden;
+}
+
+body.fadec {
+	/* animate oncomplete pulse background */
+	animation-name: pulseright;
+	animation-duration: .4s;
+}
+
+@keyframes pulseright {
+	0% {
+		/* darkgrey */
+		background-color: #363636
+	}
+
+	25% {
+		/* darkgreen */
+		background-color: #364636
+	}
+
+	100% {
+		/* darkgrey */
+		background-color: #363636
+	}
+}
+
+body.fade {
+	/* animate onerror pulse background */
+	animation-name: pulsewrong;
+	animation-duration: .4s;
+}
+
+@keyframes pulsewrong {
+	0% {
+		/* darkgrey */
+		background-color: #363636
+	}
+
+	25% {
+		/* darkred */
+		background-color: #463636
+	}
+
+	100% {
+		/* darkgrey */
+		background-color: #363636
+	}
+}
+
+
+#text-wrapper {
+	/* aligning the text in the center and a bit under the top of the page */
+	position: absolute;
+	left: 50%;
+	top: 20%;
+}
+
+/* giving the text style */
+
+.text {
+	font-family: 'Maximilien-regular', sans-serif;
+	position: relative;
+	left: -50%;
+	color: #fff;
+	font-size: 36px;
+}
+
+/* aligning the text in the center and a bit above the bottom of the page */
+
+#turn-text-wrapper {
+	position: absolute;
+	left: 50%;
+	bottom: 20%;
+}
+
+/* centering the table horizontally and vertically */
+
+#center {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* aligning the table in the center of itself */
+
+table {
+	align-self: center;
+}
+
+
+/* giving the seperate divs a width,height,color and border-radius */
+
+table tr td div {
+	transition-duration: 0.5s;
+	border-radius: 5px;
+	width: 80px;
+	height: 80px;
+	background-color: #fff;
+}
+
+
+/* styling the rematch class */
+
+.rematch {
+	font-family: 'Maximilien-regular', sans-serif;
+	text-decoration: none;
+	position: relative;
+	color: #8F8;
+	font-size: 36px;
+
+}
+
+/* copyright markup */
+
+.copyright {
+	font-family: 'Maximilien-regular', sans-serif;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: #888;
+}
+
+/* rules button markup */
+
+.rules {
+	font-family: 'Maximilien-regular', sans-serif;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #888;
+}
+
+.rules a {
+	text-decoration: none;
+	color: #888;
+}
+
+.rules:hover {
+	text-decoration: underline;
+	color: #8F8;
+}
+
+
+/* cool hover effect from http://www.cssportal.com/blog/css-animated-underline-links/ */
+
+.rematch:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	border-bottom: 2px solid #8F8;
+	transition: 0.4s;
+}
+
+.rematch:hover:after {
+	width: 100%;
+}
+
+/* change the boxes in which the winning row is made to green */
+
+.win {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid #8F8;
+}
+
+
+
+/* DROPDOWN */
+
+.dropbtn {
+	font-family: 'Maximilien-regular', sans-serif;
+	background-color: transparent;
+	border: none;
+	color: #888;
+	width: 128px;
+}
+
+.dropdown {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	width: 128px;
+	height: 192px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	padding: 0;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	color: #fff;
+}
+
+/* giving the dropdown menu colors and aligning it. */
+
+.colorpicker {
+	float: left;
+	height: 48px;
+	width: 64px;
+	display: inline-block;
+}
+
+#redc {
+	background-color: #F00;
+}
+
+#bluec {
+	background-color: #00F;
+}
+
+#cyanc {
+	background-color: #0FF;
+}
+
+#pinkc {
+	background-color: #F0F;
+}
+
+#blackc {
+	background-color: #000;
+}
+
+#whitec {
+	background-color: #FFF;
+}
+
+#greenc {
+	background-color: #0F0;
+}
+
+#yellowc {
+	background-color: #FF0;
+}

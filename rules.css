@@ -1,0 +1,26 @@
+body {
+	margin: 10;
+	padding: 0;
+	background-color: #363636;
+	overflow-y: hidden;
+}
+
+#img-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+#img-wrapper img {
+	position: relative;
+	margin: 0 auto;
+	width: 20%;
+	float: left;
+}
+
+#text-wrapper {
+	font-family: 'Maximilien', sans-serif;
+	position: relative;
+	color: #fff;
+	font-size: 36px;
+	text-align: center;
+}
