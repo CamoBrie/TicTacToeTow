@@ -1,7 +1,7 @@
 # TicTacToeTow
 
-- Personally hosted
+- Personally hosted: 
 www.van-meggelen.nl/TTTT
 
-- Hosted by github
+- Hosted by github: 
 https://camobrie.github.io/TicTacToeTow/
