@@ -133,6 +133,10 @@ $("table div").on({
 
 	//onclick function
 	click: function () {
+		// Prevent from clicking on AI's turn
+		if(!window._userCanClick) {
+			return;
+		}
 
 		//check if it is red's turn and if the square is empty.
 		if (!($(this).hasClass("use")) && turn && game === false) {
@@ -159,7 +163,8 @@ $("table div").on({
 			turn = !turn;
 
 			//setting the color of the text of whose turn it is to red.
-			$("#turn").html("Player 2").css("color", colors[currentcolor][1]);
+			const playerName = window._aiEnabled ? 'AI' : 'Player 2';
+			$("#turn").html(playerName).css("color", colors[currentcolor][1]);
 
 			//changing the background color to blue.
 			$(this).css("background-color", colors[currentcolor][2]);
@@ -242,6 +247,11 @@ $("table div").on({
 				}
 			}
 		}
+
+		// ai plays turn
+		if (turn && game === false && window._aiEnabled) {
+			ai();
+		}
 	}
 });
 
@@ -279,3 +289,31 @@ $('[data-fancybox]').fancybox({
 		}
 	}
 });
+
+// AI
+window._aiEnabled = false;
+window._userCanClick = true;
+
+const ai = async () => {
+    const rand = Math.floor(Math.random() * 15 + 1);
+	const valueIsUsed = typeof gamedata[rand] === "boolean";
+	window._userCanClick = false;
+
+	if (valueIsUsed) {
+        ai();
+	}
+
+	// Add perception of intelligent ai
+	await aiWait(400);
+
+	window._userCanClick = true;
+    document.getElementById(rand).click();
+}
+
+const aiWait = ms => new Promise(res => setTimeout(res, ms));
+
+const toggleAi = () => {
+	window._aiEnabled = !window._aiEnabled;
+
+	document.querySelector('#ai_state').innerHTML = window._aiEnabled ? 'Enabled' : 'Disabled';
+}
